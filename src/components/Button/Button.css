@@ -1,0 +1,11 @@
+.tertiary {
+  background-color: transparent;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-style: none;
+}
