@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `Bukky Oluseye | Portfolio V1`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.bukkyoluseye.com`,
   },
   plugins: [
     "gatsby-plugin-image",
