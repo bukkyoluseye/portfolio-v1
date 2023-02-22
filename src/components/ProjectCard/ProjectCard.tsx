@@ -17,15 +17,21 @@ loading? (default is not loading)
 
 */
 
-const ProjectCard = (props) => {
+const ProjectCard = (props: {
+  subtitle: string;
+  title: string;
+  tags: string;
+  href: string;
+}) => {
   const { subtitle, title, tags, href } = props;
 
   const projectTags = [];
-  if(tags !== undefined && tags !== null && tags.length > 1){
-  for (let i = 0; i < tags.length - 1; i++) {
-    projectTags.push(tags[i] + " • ");
+  if (tags !== undefined && tags !== null && tags.length > 1) {
+    for (let i = 0; i < tags.length - 1; i++) {
+      projectTags.push(tags[i] + " • ");
+    }
+    projectTags.push(tags[tags.length - 1]);
   }
-  projectTags.push(tags[tags.length - 1]);}
 
   return (
     <div className="project-card">
@@ -35,7 +41,7 @@ const ProjectCard = (props) => {
           <h3>{title}</h3>
         </div>
         {tags && <p>{tags && tags.length > 1 ? projectTags : tags && tags}</p>}
-        <Link className="project-link" href={href}>
+        <Link className="project-link" href={href} rel={""} target={""}>
           VIEW <span className="visually-hidden">{subtitle} </span>PROJECT
           <ArrowForwardIcon />
         </Link>

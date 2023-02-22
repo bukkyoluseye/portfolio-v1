@@ -16,7 +16,7 @@ loading? (default is not loading)
 
 */
 
-const Button = (props) => {
+const Button = (props: { className?: string; label?: string; variant?: string; hasIcon?: any; onClick?: any; loading?: any; icon?: any; children?: any; }) => {
   const { label, variant, hasIcon, onClick, loading, icon, children } = props;
   return (
     <button

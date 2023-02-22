@@ -2,16 +2,16 @@ import React from "react";
 import Button from "../Button/Button";
 import Link from "../Link/Link";
 
-export default DesktopNavBar = (props) => {
+const DesktopNavBar = () => {
     
   return (
     <nav>
       <ul>
         <li>
-          <Link></Link>
+          <Link href={""} rel={""} target={""}></Link>
         </li>
         <li>
-          <Link></Link>
+          <Link href={""} rel={""} target={""}></Link>
         </li>
         <li>
           <Button label="Get in touch" />
@@ -20,3 +20,5 @@ export default DesktopNavBar = (props) => {
     </nav>
   );
 };
+
+export default DesktopNavBar

@@ -1,7 +1,7 @@
 import React from "react";
 import "./loader.css";
 
-const Loader = (props) => {
+const Loader = (props: { size: string; variant: string; }) => {
   const { size, variant } = props;
   return (
     <div

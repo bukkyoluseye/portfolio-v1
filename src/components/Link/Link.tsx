@@ -15,10 +15,16 @@ loading? (default is not loading)
 
 */
 
-const Link = (props) => {
-  const { children, href, rel, target } = props;
+const Link = (props: {
+  className?: string;
+  children?: any;
+  href: string;
+  rel: string;
+  target: string;
+}) => {
+  const { children, href, rel, target, className } = props;
   return (
-    <a href={href} rel={rel} target={target} className={props.className}>
+    <a href={href} rel={rel} target={target} className={className}>
       {children}
     </a>
   );
