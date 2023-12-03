@@ -1,8 +1,9 @@
 import React from "react";
 import "./ProjectCard.css";
 import { Link, Tag } from "@chakra-ui/react";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import VisuallyHidden from "../VisuallyHidden/VisuallyHidden";
+import Icon from "@mdi/react";
+import { mdiArrowRight } from "@mdi/js";
 
 /* PROPS
 
@@ -44,7 +45,7 @@ const ProjectCard = (props: {
           href={`projects/${title.split(" ").join("").toLowerCase()}`}
         >
           VIEW <VisuallyHidden>{title} </VisuallyHidden>PROJECT
-          <ArrowForwardIcon />
+          <Icon path={mdiArrowRight} size={1} />
         </Link>
       </div>
     </div>
