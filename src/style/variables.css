@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600&display=swap");
+@import "normalize.css";
 
 h1,
 h2,
@@ -11,31 +12,32 @@ h3 {
   margin: 0;
 }
 
-body {
+body,
+a {
   font-family: "Outfit", sans-serif;
 }
 
 h1 {
-  font-size: 30px;
-  line-height: 38px;
+  font-size: 1.875rem;
+  line-height: 2.375rem;
 }
 
 h2 {
-  font-size: 28px;
-  line-height: 36px;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
   letter-spacing: 0.015em;
 }
 
 h3 {
-  font-size: 26px;
-  line-height: 34px;
+  font-size: 1.625rem;
+  line-height: 2.125rem;
   letter-spacing: 0.02em;
 }
 
 h4 {
   font-weight: 400;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 2rem;
   letter-spacing: 0.02em;
   margin: 0;
 }
@@ -43,8 +45,8 @@ h4 {
 h5 {
   font-family: "Outfit", sans-serif;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   letter-spacing: 0.02em;
   margin: 0;
 }
@@ -52,8 +54,8 @@ h5 {
 h6 {
   font-family: "Outfit", sans-serif;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
   letter-spacing: 0.02em;
   margin: 0;
 }
@@ -61,8 +63,8 @@ h6 {
 p {
   font-family: "Outfit", sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem;
   letter-spacing: 0.02em;
   margin: 0;
 }
@@ -70,40 +72,56 @@ p {
 span {
   font-family: "Outfit", sans-serif;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem;
   letter-spacing: 0.02em;
   margin: 0;
 }
 
+button {
+  font-family: "Syne", "Outfit", sans-serif;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: 1.75rem; /* 140% */
+  letter-spacing: 0.025rem;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.breadcrumbs {
+  padding: 0;
+}
+
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 2.5rem;
+    line-height: 3rem;
   }
 
   h2 {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
   }
 
   h3 {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
 
   h4 {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
   }
 
   h5 {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   h6 {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }

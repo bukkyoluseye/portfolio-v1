@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import './MobileNavButton.css';
+import "./MobileNavButton.css";
 
 const MobileNavButton = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const isMenuOpen = (e) => {
-        e.preventDefault();
-        setIsOpen(!isOpen);
-    }
+  const [isOpen, setIsOpen] = useState(false);
+  const isMenuOpen = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    setIsOpen(!isOpen);
+  };
   return (
-    <button onClick={isMenuOpen} className={isOpen && "open"}>
+    <button onClick={isMenuOpen} className={isOpen ? "open" : ""}>
       <span></span>
       <span></span>
       <span></span>
@@ -16,4 +16,4 @@ const MobileNavButton = () => {
   );
 };
 
-export default MobileNavButton
+export default MobileNavButton;
