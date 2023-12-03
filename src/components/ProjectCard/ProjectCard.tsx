@@ -1,7 +1,8 @@
 import React from "react";
 import "./ProjectCard.css";
-import Link from "../Link/Link";
+import { Link, Tag } from "@chakra-ui/react";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import VisuallyHidden from "../VisuallyHidden/VisuallyHidden";
 
 /* PROPS
 
@@ -20,29 +21,29 @@ loading? (default is not loading)
 const ProjectCard = (props: {
   subtitle: string;
   title: string;
-  tags: string;
-  href: string;
+  tags: string[];
 }) => {
-  const { subtitle, title, tags, href } = props;
+  const { subtitle, title, tags } = props;
 
-  const projectTags = [];
-  if (tags !== undefined && tags !== null && tags.length > 1) {
-    for (let i = 0; i < tags.length - 1; i++) {
-      projectTags.push(tags[i] + " • ");
-    }
-    projectTags.push(tags[tags.length - 1]);
-  }
+  const projectTags = tags?.map((tag: string) => (
+    <Tag variant="outline" color="white" borderRadius="full">
+      {tag}
+    </Tag>
+  ));
 
   return (
     <div className="project-card">
       <div className="project-info">
         <div className="title-area">
-          <h4>{subtitle}</h4>
-          <h3>{title}</h3>
+          <h4>{title}</h4>
+          <h3>{subtitle}</h3>
         </div>
-        {tags && <p>{tags && tags.length > 1 ? projectTags : tags && tags}</p>}
-        <Link className="project-link" href={href} rel={""} target={""}>
-          VIEW <span className="visually-hidden">{subtitle} </span>PROJECT
+        <div className="tags">{projectTags}</div>
+        <Link
+          className="project-link"
+          href={`projects/${title.split(" ").join("").toLowerCase()}`}
+        >
+          VIEW <VisuallyHidden>{title} </VisuallyHidden>PROJECT
           <ArrowForwardIcon />
         </Link>
       </div>

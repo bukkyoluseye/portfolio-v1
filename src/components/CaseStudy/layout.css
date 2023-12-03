@@ -1,0 +1,35 @@
+.projects {
+  padding: 1.5rem 2.5rem 0;
+}
+
+.project-header {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+.project-title-area {
+  padding-bottom: 2.5rem;
+}
+
+.mytutor {
+  background-color: #e5e4ff;
+}
+
+.floriss {
+  background-color: rgba(203, 172, 215, 0.9);
+}
+
+.tutor-up {
+  background-color: #bce9e6;
+}
+
+.tutor-up img {
+  padding-bottom: 2.5rem;
+}
+
+@media screen and (min-width: 576px) {
+  .project-header {
+    grid-template-columns: 1fr 1fr;
+  }
+}

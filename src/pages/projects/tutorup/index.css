@@ -1,0 +1,10 @@
+em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+#problems-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

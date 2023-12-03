@@ -1,0 +1,60 @@
+.type {
+  width: 100%;
+  border-radius: 0.45rem 0.45rem 0 0;
+  padding: 0.25rem 0;
+}
+
+.type p {
+  font-weight: 600;
+  text-align: center;
+}
+
+.bookings .type {
+  background-color: #4f30f5;
+  color: white;
+}
+
+.student-details .type {
+  background-color: #f4b840;
+}
+
+.problem-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1.25rem 0.75rem;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.circle-image {
+  background-color: #fdf6e1;
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-image img {
+  width: 2.75rem;
+}
+
+.project-summary {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  border-radius: 0.45rem;
+  box-shadow: 0px 0px 50px 0px rgba(186, 177, 227, 0.25);
+  align-self: stretch;
+  width: 50%;
+  min-width: 14.75rem;
+  /* max-width: calc(50% - 0.5rem); */
+}
+
+@media screen and (min-width: 768px) {
+  .project-summary {
+    width: 33.33%;
+  }
+}

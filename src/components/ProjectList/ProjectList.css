@@ -6,10 +6,10 @@
   gap: 16px;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .project-list {
     flex-direction: row;
     align-items: flex-start;
     overflow-x: scroll;
   }
-}
+} */

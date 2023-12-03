@@ -1,0 +1,58 @@
+hr {
+  border-bottom: solid 0.75px #e7e7e7;
+  margin: 0 auto;
+  width: calc(100% - 1.5rem);
+}
+
+.project-details,
+.project-details-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-details {
+     padding: 1.25rem 2.5rem
+}
+.project-details-left {
+    gap: 0.5rem;
+}
+
+.project-tags {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.project-year {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.project-year {
+  width: 4.5rem;
+}
+
+.scroll {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+  hr {
+    width: calc(100% - 4rem);
+  }
+
+  .project-details {
+    flex-direction: row;
+    padding: 1.25rem 2.5rem;
+    justify-content: space-between;
+  }
+
+  .project-details-left {
+    flex-direction: row;
+    gap: 10rem;
+  }
+  
+  .scroll {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
