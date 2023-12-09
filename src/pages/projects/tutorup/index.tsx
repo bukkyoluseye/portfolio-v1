@@ -1,23 +1,13 @@
 import React from "react";
 import CaseStudyLayout from "../../../components/CaseStudy/layout";
-import { StaticImage } from "gatsby-plugin-image";
+import { StaticImage, getImage } from "gatsby-plugin-image";
 import ProblemSummary from "../../../components/TutorUp/ProblemSummary";
 import "./index.css";
 
 const TutorUpCaseStudy = () => {
   // const Problem
   return (
-    <CaseStudyLayout
-      subtitle="Web Application for a Tutoring Business"
-      title="Tutor Up"
-      year={2022}
-      projectImage={
-        <StaticImage
-          src="../../../images/tutorup.png"
-          alt="Screenshots of the Tutor Up app on a laptop and on a phone"
-        />
-      }
-    >
+    <CaseStudyLayout title="Tutor Up">
       <main>
         <div>
           <p>The problem</p>
@@ -26,8 +16,8 @@ const TutorUpCaseStudy = () => {
               type="Bookings"
               image={
                 <StaticImage
-                  src={"../../../images/weary-face-emoji.png"}
-                  alt={"Weary face emoji"}
+                  src="../../../images/weary-face-emoji.png"
+                  alt="Weary face emoji"
                 />
               }
               body={

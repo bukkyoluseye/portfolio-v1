@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600&display=swap");
+
 @import "normalize.css";
 
 h1,
@@ -92,6 +92,10 @@ button {
 
 .breadcrumbs {
   padding: 0;
+}
+
+img {
+  object-fit: contain;
 }
 
 @media screen and (min-width: 768px) {

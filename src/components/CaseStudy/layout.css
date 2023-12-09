@@ -1,5 +1,6 @@
 .projects {
   padding: 1.5rem 2.5rem 0;
+  height: 352px;
 }
 
 .project-header {
@@ -29,6 +30,10 @@
 }
 
 @media screen and (min-width: 576px) {
+  .projects {
+    height: 352px;
+  }
+
   .project-header {
     grid-template-columns: 1fr 1fr;
   }

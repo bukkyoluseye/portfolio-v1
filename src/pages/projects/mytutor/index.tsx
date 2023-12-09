@@ -7,7 +7,7 @@ import "../../../components/CaseStudy/layout.css";
 const MyTutorCaseStudy = () => {
   const title: string = "MyTutor";
   return (
-    <CaseStudyLayout title="MyTutor" subtitle="Redesign Case Study" year={2021}>
+    <CaseStudyLayout title="MyTutor">
       <main>
         <p className="about-project">ABOUT {title.toUpperCase()}</p>
         <p>

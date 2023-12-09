@@ -48,13 +48,4 @@
   border-radius: 0.45rem;
   box-shadow: 0px 0px 50px 0px rgba(186, 177, 227, 0.25);
   align-self: stretch;
-  width: 50%;
-  min-width: 14.75rem;
-  /* max-width: calc(50% - 0.5rem); */
-}
-
-@media screen and (min-width: 768px) {
-  .project-summary {
-    width: 33.33%;
-  }
 }

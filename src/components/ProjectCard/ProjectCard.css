@@ -4,11 +4,10 @@
 .project-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
-  padding: 1rem;
+  padding: 1.5rem;
   flex: 1 1 0;
-  height: 240px;
   border-radius: 12px;
   background: #000000;
   align-self: stretch;
@@ -19,7 +18,9 @@
   display: flex;
   flex-grow: 0;
   flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
+  height: 100%;
   padding: 0px;
   gap: 2rem;
   color: white;
@@ -47,10 +48,6 @@
 
 @media screen and (min-width: 768px) {
   .project-card {
-    padding: 1rem 2rem;
-  }
-
-  .project-info {
-    width: 428px;
+    padding: 1.5rem 2rem;
   }
 }

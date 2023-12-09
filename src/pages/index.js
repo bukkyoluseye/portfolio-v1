@@ -1,13 +1,10 @@
 import * as React from "react";
-import { Button } from '@chakra-ui/react';
+import { Button, ChakraProvider } from '@chakra-ui/react';
 import ProjectList from "../components/ProjectList/ProjectList";
 import VisuallyHidden from "../components/VisuallyHidden/VisuallyHidden";
 import SocialMediaBar from "../components/SocialMediaBar/SocialMediaBar";
 import Hero from "../components/Hero/Hero";
 import Layout from '../components/layout'
-import {
-  ChakraProvider,
-} from "@chakra-ui/react";
 import "../style/normalize.css";
 import "../style/variables.css";
 

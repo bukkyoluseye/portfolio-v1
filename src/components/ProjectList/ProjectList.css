@@ -1,15 +1,7 @@
 .project-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   align-items: flex-start;
   padding: 0px;
   gap: 16px;
 }
-
-/* @media screen and (min-width: 768px) {
-  .project-list {
-    flex-direction: row;
-    align-items: flex-start;
-    overflow-x: scroll;
-  }
-} */
