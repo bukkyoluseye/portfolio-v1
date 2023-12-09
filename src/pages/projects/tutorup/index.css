@@ -9,3 +9,7 @@ em {
   max-width: 74rem;
   gap: 1rem;
 }
+
+main {
+  width: 100%;
+}

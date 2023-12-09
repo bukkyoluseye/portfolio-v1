@@ -5,9 +5,8 @@ import ProblemSummary from "../../../components/TutorUp/ProblemSummary";
 import "./index.css";
 
 const TutorUpCaseStudy = () => {
-  // const Problem
   return (
-    <CaseStudyLayout title="Tutor Up">
+    <CaseStudyLayout title="Tutor Up" imageWidth="482.5px">
       <main>
         <div>
           <p>The problem</p>
