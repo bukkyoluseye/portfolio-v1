@@ -7,10 +7,12 @@
   display: grid;
   align-items: center;
   grid-template-columns: 1fr;
+  width: 100%;
 }
 
 .project-title-area {
-  padding-bottom: 2.5rem;
+  align-self: stretch;
+  margin: auto 0;
 }
 
 .mytutor {
@@ -25,10 +27,6 @@
   background-color: #bce9e6;
 }
 
-.tutor-up img {
-  padding-bottom: 2.5rem;
-}
-
 @media screen and (min-width: 576px) {
   .projects {
     height: 352px;
@@ -36,5 +34,16 @@
 
   .project-header {
     grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .tutor-up .project-image-container {
+    width: 482.5px;
+  }
+
+  .floriss .project-image-container {
+    width: 473.5px;
   }
 }

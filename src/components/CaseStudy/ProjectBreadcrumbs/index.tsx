@@ -1,6 +1,7 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
 import { Link } from "gatsby";
 import React from "react";
+import "./index.css";
 
 const ProjectBreadcrumbs = (props: { title: string }) => {
   const { title } = props;

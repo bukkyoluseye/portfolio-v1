@@ -1,7 +1,5 @@
 import React from "react";
-import "./ProblemSummary.css";
-import { StaticImage } from "gatsby-plugin-image";
-// import image from '../../images/weary-face-emoji.png'
+import "./index.css";
 
 const ProblemSummary = (props: {
   body?: JSX.Element;

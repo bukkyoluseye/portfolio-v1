@@ -1,5 +1,5 @@
 import React from "react";
-import DesktopNavBar from "./DesktopNavBar/DesktopNavBar";
+import DesktopNavBar from "./DesktopNavBar";
 
 const Layout = (props: { children: any }) => {
   const { children } = props;

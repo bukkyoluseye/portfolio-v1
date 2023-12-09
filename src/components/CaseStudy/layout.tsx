@@ -1,14 +1,19 @@
 import React from "react";
 import Layout from "../layout";
-import ProjectBreadcrumbs from "../ProjectBreadcrumbs/ProjectBreadcrumbs";
-import ProjectDetails from "../ProjectDetails/ProjectDetails";
-import "./layout.css";
+import ProjectBreadcrumbs from "./ProjectBreadcrumbs";
+import ProjectDetails from "./ProjectDetails";
+import Container from "../Container";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import projectData from "../../content/project-data";
 import { camelCase } from "lodash";
+import "./layout.css";
 
-const CaseStudyLayout = (props: { children?: any; title: string }) => {
+const CaseStudyLayout = (props: {
+  children?: any;
+  title: string;
+  imageWidth?: any;
+}) => {
   const { children, title } = props;
 
   const currentProject = projectData.find(
@@ -23,7 +28,7 @@ const CaseStudyLayout = (props: { children?: any; title: string }) => {
         nodes {
           name
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED)
+            gatsbyImageData
           }
         }
       }
@@ -47,28 +52,33 @@ const CaseStudyLayout = (props: { children?: any; title: string }) => {
           <header
             className={`projects ${title.toLowerCase().split(" ").join("-")}`}
           >
-            <ProjectBreadcrumbs title={title} />
-
-            <div className="project-header">
-              <div className="project-title-area">
-                <h2>{currentProject.title}</h2>
-                <p>{currentProject.subtitle}</p>
-              </div>
-              {imageData && (
-                <div className="project-image">
-                  <GatsbyImage
-                    image={imageData}
-                    alt={currentProject.image.alt}
-                    loading="eager"
-                  />
+            <Container>
+              <ProjectBreadcrumbs title={title} />
+            </Container>
+            <Container>
+              <div className="project-header">
+                <div className="project-title-area">
+                  <h2>{currentProject.title}</h2>
+                  <p>{currentProject.subtitle}</p>
                 </div>
-              )}
-            </div>
+                {imageData && (
+                  <div className="project-image-container">
+                    <GatsbyImage
+                      imgClassName="project-image"
+                      image={imageData}
+                      alt={currentProject.image.alt}
+                      loading="eager"
+                      objectFit="contain"
+                    />
+                  </div>
+                )}
+              </div>
+            </Container>
           </header>
           <ProjectDetails title={title} year={currentProject.year} />
         </>
       )}
-      {children}
+      <Container>{children}</Container>
     </Layout>
   );
 };

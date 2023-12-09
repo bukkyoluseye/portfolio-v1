@@ -1,5 +1,5 @@
 import React from "react";
-import "./DesktopNavBar.css";
+import "./index.css";
 import { Button, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import Icon from "@mdi/react";
 import { mdiChevronDown } from "@mdi/js";
@@ -8,7 +8,7 @@ import { mdiChevronDown } from "@mdi/js";
 
 const DesktopNavBar = () => {
   return (
-    <header>
+    <header className="desktop-nav-bar">
       <nav>
         <ul>
           <li>

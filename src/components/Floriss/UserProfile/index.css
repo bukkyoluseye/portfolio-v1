@@ -1,0 +1,60 @@
+.user-profile {
+  display: flex;
+  flex: 1 1 0;
+  width: 100%;
+}
+.profile-details > p:nth-child(-n + 3) {
+  font-weight: 600;
+}
+
+.user-profile-info {
+  background: var(--colour-8, #f5f4f7);
+  padding: 2rem 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "user user"
+    "about about"
+    "needs pains";
+  gap: 1rem;
+}
+
+.user-profile-info h4 {
+  font-weight: 600;
+  grid-area: user;
+}
+
+#about-user {
+  grid-area: about;
+}
+
+#user-needs {
+  grid-area: needs;
+}
+
+#user-pains {
+  grid-area: pains;
+}
+
+#user-image-info {
+  display: grid;
+}
+
+.user-image-container {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.profile-details {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 1.25rem;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  z-index: 1;
+  height: fit-content;
+  width: fit-content;
+  column-gap: 2.5rem;
+}

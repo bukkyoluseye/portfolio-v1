@@ -1,0 +1,28 @@
+
+
+@media only screen and (max-width: 576px) {
+  .chakra-container {
+    --container-margin: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .chakra-container {
+    --container-margin: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .chakra-container {
+    --container-margin: 1.5rem;
+    --container-max-width: 1200px;
+  }
+}
+
+.chakra-container.center-aligned {
+  max-width: var(--container-max-width, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-margin);
+  padding-right: var(--container-margin);
+}
