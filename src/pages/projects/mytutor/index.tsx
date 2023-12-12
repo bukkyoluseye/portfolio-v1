@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import "./index.css";
 import "../../../components/CaseStudy/layout.css";
 import UserProfile from "../../../components/Floriss/UserProfile";
+import SEO from "../../../components/SEO";
 
 const MyTutorCaseStudy = () => {
   const title: string = "MyTutor";
@@ -66,3 +67,5 @@ const MyTutorCaseStudy = () => {
 };
 
 export default MyTutorCaseStudy;
+
+export const Head = () => <SEO title="MyTutor" />;

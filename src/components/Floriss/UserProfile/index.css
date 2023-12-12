@@ -9,7 +9,7 @@
 
 .user-profile-info {
   background: var(--colour-8, #f5f4f7);
-  padding: 2rem 0 1.5rem;
+  padding: 2rem 2rem 1.5rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -17,6 +17,7 @@
     "about about"
     "needs pains";
   gap: 1rem;
+  
 }
 
 .user-profile-info h4 {
@@ -57,4 +58,6 @@
   height: fit-content;
   width: fit-content;
   column-gap: 2.5rem;
+  align-self: end;
+  justify-self: center;
 }

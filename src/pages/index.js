@@ -1,10 +1,11 @@
 import * as React from "react";
-import { Button, ChakraProvider } from '@chakra-ui/react';
+import { Button, ChakraProvider } from "@chakra-ui/react";
 import ProjectList from "../components/ProjectList/ProjectList";
 import VisuallyHidden from "../components/VisuallyHidden/VisuallyHidden";
 import SocialMediaBar from "../components/SocialMediaBar/SocialMediaBar";
 import Hero from "../components/Hero/Hero";
-import Layout from '../components/layout'
+import SEO from "../components/SEO";
+import Layout from "../components/layout";
 import "../style/normalize.css";
 import "../style/variables.css";
 
@@ -20,9 +21,7 @@ const IndexPage = () => {
       <Layout>
         <Hero />
         <section>
-          <ProjectList
-            id="#project-list"
-          />
+          <ProjectList id="#project-list" />
         </section>
       </Layout>
     </ChakraProvider>
@@ -31,4 +30,4 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>Home Page</title>;
+export const Head = () => <SEO />;

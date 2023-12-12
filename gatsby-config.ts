@@ -3,7 +3,8 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Bukky Oluseye | Portfolio V1`,
+    title: `Bukky Oluseye`,
+    description: `Bukky Oluseye is a creative developer, fuelled by her passion for creating seamless and accessible user experiences. With experience in both UX/UI design and front-end development, she looks to bridge the gap and create solutions that are both captivating and impactful`,
     siteUrl: `https://www.bukkyoluseye.com`,
   },
   plugins: [

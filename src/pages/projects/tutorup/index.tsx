@@ -3,6 +3,7 @@ import CaseStudyLayout from "../../../components/CaseStudy/layout";
 import { StaticImage, getImage } from "gatsby-plugin-image";
 import ProblemSummary from "../../../components/TutorUp/ProblemSummary";
 import "./index.css";
+import SEO from "../../../components/SEO";
 
 const TutorUpCaseStudy = () => {
   return (
@@ -62,3 +63,5 @@ const TutorUpCaseStudy = () => {
 };
 
 export default TutorUpCaseStudy;
+
+export const Head = () => <SEO title="Tutor Up" />;

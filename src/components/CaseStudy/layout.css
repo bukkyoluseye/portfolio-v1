@@ -38,6 +38,10 @@
   }
 }
 
+.tutor-up .project-image-container {
+  width: 398px;
+}
+
 @media screen and (min-width: 768px) {
   .tutor-up .project-image-container {
     width: 482.5px;
