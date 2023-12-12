@@ -40,6 +40,12 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-html-attributes",
+      options: {
+        lang: "en",
+      },
+    },
+    {
       resolve: "@chakra-ui/gatsby-plugin",
       options: {
         /**
