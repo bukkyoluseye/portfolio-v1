@@ -1,8 +1,8 @@
 import React from "react";
 import Layout from "../layout";
-import ProjectBreadcrumbs from "./ProjectBreadcrumbs";
-import ProjectDetails from "./ProjectDetails";
-import Container from "../Container";
+import ProjectBreadcrumbs from "../../components/CaseStudy/ProjectBreadcrumbs";
+import ProjectDetails from "../../components/CaseStudy/ProjectDetails";
+import Container from "../../components/Container";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import projectData from "../../content/project-data";

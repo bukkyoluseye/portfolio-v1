@@ -11,7 +11,6 @@
   border-radius: 12px;
   background: #000000;
   align-self: stretch;
-
 }
 
 .project-info {
@@ -38,12 +37,22 @@
   align-items: center;
   gap: 0.25rem;
   padding-left: 0;
-  color: white
+  color: white;
 }
 
 .tags {
   display: flex;
   gap: 0.125rem;
+}
+
+.title-area h4 {
+  font-size: 1.25rem;
+}
+
+.title-area h5 {
+  font-family: "Syne", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem
 }
 
 @media screen and (min-width: 768px) {

@@ -1,10 +1,10 @@
 import React from "react";
-import CaseStudyLayout from "../../../components/CaseStudy/layout";
 import { StaticImage } from "gatsby-plugin-image";
 import "./index.css";
-import "../../../components/CaseStudy/layout.css";
+import "../../../templates/CaseStudy/layout.css";
 import UserProfile from "../../../components/Floriss/UserProfile";
-import SEO from "../../../components/SEO";
+import Seo from "../../../components/SEO";
+import CaseStudyLayout from "../../../templates/CaseStudy/layout";
 
 const MyTutorCaseStudy = () => {
   const title: string = "MyTutor";
@@ -68,4 +68,4 @@ const MyTutorCaseStudy = () => {
 
 export default MyTutorCaseStudy;
 
-export const Head = () => <SEO title="MyTutor" />;
+export const Head = () => <Seo title="MyTutor" />;

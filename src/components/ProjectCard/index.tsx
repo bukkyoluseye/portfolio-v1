@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProjectCard.css";
+import "./index.css";
 import { Link, Tag } from "@chakra-ui/react";
 import VisuallyHidden from "../VisuallyHidden/VisuallyHidden";
 import Icon from "@mdi/react";
@@ -37,7 +37,7 @@ const ProjectCard = (props: {
       <div className="project-info">
         <div className="title-area">
           <h4>{title}</h4>
-          <h3>{subtitle}</h3>
+          <h5>{subtitle}</h5>
         </div>
         <div className="tags">{projectTags}</div>
         <Link

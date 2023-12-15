@@ -1,10 +1,10 @@
 import React from "react";
 import Icon from "@mdi/react";
 import { mdiArrowDownCircleOutline, mdiClockOutline } from "@mdi/js";
-import data from "../../../content/project-data";
+import data from "../../../content/project-data.js";
 import "./index.css";
 import { ProjectDataTypes } from "../../../types/types.js";
-import Container from "../../Container";
+import Container from "../../Container/index.js";
 
 const ProjectDetails = (props: { title: string; year: number }) => {
   const { title, year } = props;

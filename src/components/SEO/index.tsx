@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-const SEO = (props: { title?: string; description?: string }) => {
+const Seo = (props: { title?: string; description?: string }) => {
   const { title, description } = props;
 
   const data = useStaticQuery(graphql`
@@ -21,7 +21,9 @@ const SEO = (props: { title?: string; description?: string }) => {
   return (
     <>
       <title>
-        {title} | {data.site.siteMetadata.title}
+        {title
+          ? `${title} | ${data.site.siteMetadata.title}`
+          : `${data.site.siteMetadata.title} | Creative Developer`}
       </title>
       <meta
         name="description"
@@ -31,7 +33,11 @@ const SEO = (props: { title?: string; description?: string }) => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:title"
-        content={`${title} | ${data.site.siteMetadata.title}`}
+        content={
+          title
+            ? `${title} | ${data.site.siteMetadata.title}`
+            : `${data.site.siteMetadata.title} | Creative Developer`
+        }
       />
       <meta
         name="twitter:url"
@@ -51,4 +57,4 @@ const SEO = (props: { title?: string; description?: string }) => {
   );
 };
 
-export default SEO;
+export default Seo;

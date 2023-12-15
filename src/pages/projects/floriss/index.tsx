@@ -1,7 +1,7 @@
 import React from "react";
-import CaseStudyLayout from "../../../components/CaseStudy/layout";
+import Seo from "../../../components/SEO";
+import CaseStudyLayout from "../../../templates/CaseStudy/layout";
 import "./index.css";
-import SEO from "../../../components/SEO";
 
 const FlorissCaseStudy = () => {
   return <CaseStudyLayout title="Floriss"></CaseStudyLayout>;
@@ -9,4 +9,4 @@ const FlorissCaseStudy = () => {
 
 export default FlorissCaseStudy;
 
-export const Head = () => <SEO title="Floriss" />;
+export const Head = () => <Seo title="Floriss" />;

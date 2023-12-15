@@ -1,11 +1,10 @@
 import React from "react";
-import "./ProjectList.css";
-import "../ProjectCard/ProjectCard";
-import ProjectCard from "../ProjectCard/ProjectCard";
+import "./index.css";
+import "../ProjectCard";
+import ProjectCard from "../ProjectCard";
 import projectData from "../../content/project-data";
 
 const ProjectList = () => {
-  console.log(projectData);
   const projectCards = projectData.map(
     (data: { subtitle: string; title: string; tags: string[] }) => (
       <ProjectCard
@@ -16,10 +15,10 @@ const ProjectList = () => {
     )
   );
   return (
-    <section>
+    <>
       <h2>My Work</h2>
       <div className="project-list">{projectCards}</div>
-    </section>
+    </>
   );
 };
 

@@ -1,9 +1,9 @@
 import React from "react";
-import CaseStudyLayout from "../../../components/CaseStudy/layout";
-import { StaticImage, getImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 import ProblemSummary from "../../../components/TutorUp/ProblemSummary";
 import "./index.css";
-import SEO from "../../../components/SEO";
+import Seo from "../../../components/SEO";
+import CaseStudyLayout from "../../../templates/CaseStudy/layout";
 
 const TutorUpCaseStudy = () => {
   return (
@@ -64,4 +64,4 @@ const TutorUpCaseStudy = () => {
 
 export default TutorUpCaseStudy;
 
-export const Head = () => <SEO title="Tutor Up" />;
+export const Head = () => <Seo title="Tutor Up" />;

@@ -2,19 +2,25 @@
 
 @media only screen and (max-width: 576px) {
   .chakra-container {
-    --container-margin: 0.5rem;
+    --container-margin: 1rem;
   }
 }
 
 @media only screen and (min-width: 576px) {
   .chakra-container {
-    --container-margin: 1rem;
+    --container-margin: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .chakra-container {
+    --container-margin: 2.5rem;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .chakra-container {
-    --container-margin: 1.5rem;
+    --container-margin: 3rem;
     --container-max-width: 1200px;
   }
 }

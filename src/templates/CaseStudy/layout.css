@@ -1,6 +1,6 @@
 .projects {
-  padding: 1.5rem 2.5rem 0;
-  height: 352px;
+  padding: 1.5rem 0 0;
+  max-height: 21rem;
 }
 
 .project-header {
@@ -8,6 +8,8 @@
   align-items: center;
   grid-template-columns: 1fr;
   width: 100%;
+  row-gap: 1rem;
+  justify-content: space-between;
 }
 
 .project-title-area {
@@ -25,10 +27,16 @@
 
 .tutor-up {
   background-color: #bce9e6;
+  padding-bottom: 1rem;
+}
+
+.tutor-up .project-image-container {
+  min-width: 300px;
 }
 
 @media screen and (min-width: 576px) {
   .projects {
+    padding: 1.5rem 0 0;
     height: 352px;
   }
 
@@ -36,10 +44,10 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 1rem;
   }
-}
 
-.tutor-up .project-image-container {
-  width: 398px;
+  .tutor-up .project-image-container {
+    width: 398px;
+  }
 }
 
 @media screen and (min-width: 768px) {

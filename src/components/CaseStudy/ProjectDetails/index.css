@@ -36,13 +36,9 @@ hr {
 }
 
 @media screen and (min-width: 768px) {
-  hr {
-    width: calc(100% - 4rem);
-  }
-
   .project-details {
     flex-direction: row;
-    padding: 1.25rem 2.5rem;
+    padding: 1.25rem 0;
     justify-content: space-between;
     width: 100%;
   }

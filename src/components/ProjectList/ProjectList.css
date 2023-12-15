@@ -1,7 +1,0 @@
-.project-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  align-items: flex-start;
-  padding: 0px;
-  gap: 16px;
-}

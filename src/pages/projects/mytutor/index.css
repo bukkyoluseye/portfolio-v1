@@ -3,7 +3,7 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 1rem;
-  padding: 2rem 2.5rem;
+  padding: 2rem 0;
 }
 
 #current-mytutor-app {
