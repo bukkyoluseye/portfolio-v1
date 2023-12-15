@@ -1,0 +1,18 @@
+.moon:hover {
+    fill: var(--grey-1);
+    stroke: var(--grey-1);
+}
+
+.sun,
+.moon {
+    fill: none;
+    stroke: var(--grey-1);
+    stroke-width: 32px;
+    width: 24px;
+    height: auto;
+}
+
+.sun:hover {
+    fill: var(--grey-1);
+    stroke: var(--grey-1);
+}
