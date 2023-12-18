@@ -72,9 +72,9 @@ jobs:
       - name: Build with Gatsby
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
         env:
-          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
-          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
-          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+          GATSBY_SPOTIFY_CLIENT_ID: ${{ secrets.GATSBY_SPOTIFY_CLIENT_ID }}
+          GATSBY_SPOTIFY_CLIENT_SECRET: ${{ secrets.GATSBY_SPOTIFY_CLIENT_SECRET }}
+          GATSBY_SPOTIFY_REFRESH_TOKEN: ${{ secrets.GATSBY_SPOTIFY_REFRESH_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

@@ -3,9 +3,9 @@ import axios from "axios";
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 
-const clientId = process.env.SPOTIFY_CLIENT_ID;
-const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
-const refreshToken = process.env.SPOTIFY_REFRESH_TOKEN;
+const clientId = process.env.GATSBY_SPOTIFY_CLIENT_ID;
+const clientSecret = process.env.GATSBY_SPOTIFY_CLIENT_SECRET;
+const refreshToken = process.env.GATSBY_SPOTIFY_REFRESH_TOKEN;
 
 const getAccessToken = async (): Promise<any> => {
   const params = new URLSearchParams({
