@@ -7,3 +7,11 @@ export interface ProjectDataTypes {
     alt: string;
   };
 }
+
+export interface CurrentlyPlayingItem {
+  albumImageUrl: string;
+  artist: string[];
+  isPlaying: boolean;
+  songUrl: string;
+  title: string;
+}

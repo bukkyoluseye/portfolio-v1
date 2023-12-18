@@ -1,59 +1,62 @@
 import React, { useState, useEffect } from "react";
-import { getNowPlayingItem } from "../../api/spotifyAPI";
+import { getCurrentlyPlayingTrack } from "../../api/spotifyAPI";
+import { CurrentlyPlayingItem } from "../../types/types";
 import { graphql, useStaticQuery } from "gatsby";
 import "./index.css";
-import { url } from "inspector";
-
-type ResultType =
-  | {}
-  | {
-      albumImageUrl: string | undefined;
-      artist: string | undefined;
-      isPlaying: boolean;
-      songUrl: string | undefined;
-      title: string | undefined;
-    };
+import VisuallyHidden from "../VisuallyHidden/VisuallyHidden";
 const MiniPlayer = () => {
   const [loading, setLoading] = useState<boolean>(true);
-  const [result, setResult] = useState<ResultType>({});
-  useEffect(() => {
-    setInterval(() => {
-      Promise.all([getNowPlayingItem()]).then((results) => {
-        setResult(results[0]);
-        setLoading(false);
-      });
-    }, 1000);
-  });
+  const [result, setResult] = useState<CurrentlyPlayingItem | null>(null);
 
-  const data = useStaticQuery(graphql`
-    query {
-      allFile(
-        filter: {
-          sourceInstanceName: { eq: "images" }
-          relativeDirectory: { eq: "users" }
-        }
-      ) {
-        nodes {
-          name
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
-      }
-    }
-  `);
+  useEffect(() => {
+    const updateCurrentlyPlaying = async () => {
+      const currentlyPlaying = await getCurrentlyPlayingTrack();
+      setResult(currentlyPlaying);
+      setLoading(false);
+    };
+
+    updateCurrentlyPlaying();
+
+    const intervalId = setInterval(updateCurrentlyPlaying, 10000); // Update every 5 seconds
+    return () => clearInterval(intervalId);
+  }, []);
+
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     allFile(
+  //       filter: {
+  //         sourceInstanceName: { eq: "images" }
+  //         relativeDirectory: { eq: "users" }
+  //       }
+  //     ) {
+  //       nodes {
+  //         name
+  //         childImageSharp {
+  //           gatsbyImageData
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
+
+  // {
+  //   loading && <p>Loading...</p>;
+  // }
+
   return (
     <div>
       {loading && <p>Loading...</p>}
-      {!loading && Object.keys(result).length === 0 && (
+      {!loading && result === null && (
         <div>
           <span>Currently offline</span>
         </div>
       )}
-      {!loading && Object.keys(result).length !== 0 && (
+      {!loading && result !== null && (
         <div>
           <div>
-            <span>Now playing</span>
+            <VisuallyHidden>
+              Bukky is currently listening to: {result.title} by {result.artist}
+            </VisuallyHidden>
           </div>
           <div>
             <div className="song-info">
@@ -62,19 +65,13 @@ const MiniPlayer = () => {
                 src={result.albumImageUrl}
                 alt={`${result.title} album art`}
               />
-              <a
-                href={result.songUrl}
-                className="song-link hide"
-                style={{ background: `url(${result.albumImageUrl})` }}
-              >
-                <p>{result.title}</p>
-                <p>{result.artist}</p>
-              </a>
+              <div className="song-link hide">
+                <a href={result.songUrl} target="_blank">
+                  <p>{result.title}</p>
+                  <p>{result.artist}</p>
+                </a>
+              </div>
             </div>
-            <a href={result.songUrl} target="_blank">
-              {result.title}
-            </a>
-            <p>{result.artist}</p>
           </div>
         </div>
       )}
