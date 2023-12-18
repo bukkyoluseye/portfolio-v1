@@ -69,13 +69,12 @@ jobs:
             ${{ runner.os }}-gatsby-build-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: "Create env file"
-        run: |
-          touch .env.production
-          echo "${{ secrets.SPOTIFY }}" > .env.production
-
       - name: Build with Gatsby
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
