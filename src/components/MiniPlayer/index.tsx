@@ -54,16 +54,19 @@ const MiniPlayer = () => {
       const albumArtImg = albumArtRef.current;
 
       // Ensure the image is loaded before trying to get the color
-      if (albumArtImg && albumArtImg.complete) {
-        const result = colorThief.getColor(albumArtImg, 25);
-        // Convert dominant color from colorThief into an RGB string
-        const rgbColor = `rgb(${result[0]}, ${result[1]}, ${result[2]})`;
-        setBackgroundColor(rgbColor);
-        let newTextColor;
-        if (backgroundColor !== undefined) {
-          newTextColor = getTextColor(backgroundColor);
-        }
-        backgroundColor !== undefined && setTextColor(newTextColor);
+      if (albumArtImg && result) {
+        albumArtImg.onload = () => {
+          const result = colorThief.getColor(albumArtImg, 25);
+          // Convert dominant color from colorThief into an RGB string
+          const rgbColor = `rgb(${result[0]}, ${result[1]}, ${result[2]})`;
+          setBackgroundColor(rgbColor);
+          let newTextColor;
+          if (backgroundColor !== undefined) {
+            newTextColor = getTextColor(backgroundColor);
+          }
+          backgroundColor !== undefined && setTextColor(newTextColor);
+        };
+        albumArtImg.src = result.albumImageUrl
       }
     };
 
@@ -79,7 +82,7 @@ const MiniPlayer = () => {
     return () => {
       clearInterval(intervalId);
     };
-  }, [backgroundColor]); // Set background color as a dependency for the useEffect
+  }, [backgroundColor, result]); // Set background color and result as a dependency for the useEffect
 
   // const data = useStaticQuery(graphql`
   //   query {
@@ -119,7 +122,7 @@ const MiniPlayer = () => {
             </VisuallyHidden>
           </div>
           <div>
-            <a href={result.songUrl} target="_blank" className="song-info">
+            <div className="song-info">
               <p></p>
               <img
                 crossOrigin="anonymous"
@@ -135,12 +138,12 @@ const MiniPlayer = () => {
                   color: textColor,
                 }}
               >
-                <p>
+                <a href={result.songUrl} target="_blank">
                   <p>{result.title}</p>
                   <p>{result.artist}</p>
-                </p>
+                </a>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       )}
