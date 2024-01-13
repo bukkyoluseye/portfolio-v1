@@ -54,7 +54,7 @@ const MiniPlayer = () => {
       const albumArtImg = albumArtRef.current;
 
       // Ensure the image is loaded before trying to get the color
-      if (albumArtImg && result) {
+      if (albumArtImg) {
         albumArtImg.onload = () => {
           const result = colorThief.getColor(albumArtImg, 25);
           // Convert dominant color from colorThief into an RGB string
@@ -66,7 +66,6 @@ const MiniPlayer = () => {
           }
           backgroundColor !== undefined && setTextColor(newTextColor);
         };
-        albumArtImg.src = result.albumImageUrl
       }
     };
 
@@ -122,8 +121,7 @@ const MiniPlayer = () => {
             </VisuallyHidden>
           </div>
           <div>
-            <div className="song-info">
-              <p></p>
+            <a href={result.songUrl} target="_blank" className="song-info">
               <img
                 crossOrigin="anonymous"
                 className="album-art"
@@ -138,12 +136,12 @@ const MiniPlayer = () => {
                   color: textColor,
                 }}
               >
-                <a href={result.songUrl} target="_blank">
+                <div>
                   <p>{result.title}</p>
                   <p>{result.artist}</p>
-                </a>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       )}
