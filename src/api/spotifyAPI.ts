@@ -24,7 +24,6 @@ const getAccessToken = async (): Promise<any> => {
         "Content-Type": "application/x-www-form-urlencoded",
       },
     });
-
     return await response.data.access_token;
   } catch (error) {
     console.error("Error fetching currently playing track:", error);
@@ -34,37 +33,32 @@ const getAccessToken = async (): Promise<any> => {
 
 export const getCurrentlyPlayingTrack = async (): Promise<any> => {
   const accessToken = await getAccessToken();
-  if (accessToken !== null) {
-    try {
-      const response = await axios.get(NOW_PLAYING_ENDPOINT, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
+  try {
+    const response = await axios.get(NOW_PLAYING_ENDPOINT, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
 
-      const song = response.data;
-      console.log(song);
-      const albumImageUrl = song.item.album.images[0].url;
-      const artist = song.item.artists
-        .map((_artist: { name: any }) => _artist.name)
-        .join(", ");
-      const isPlaying = song.is_playing;
-      const songUrl = song.item.external_urls.spotify;
-      const title = song.item.name;
+    const song = response.data;
+    
+    const albumImageUrl = song.item.album.images[0].url;
+    const artist = song.item.artists
+      .map((_artist: { name: any }) => _artist.name)
+      .join(", ");
+    const isPlaying = song.is_playing;
+    const songUrl = song.item.external_urls.spotify;
+    const title = song.item.name;
 
-      return {
-        albumImageUrl,
-        artist,
-        isPlaying,
-        songUrl,
-        title,
-      };
-    } catch (error) {
-      console.error("Error fetching currently playing track:", error);
-      return null;
-    }
-  } else {
-    console.log("error");
+    return {
+      albumImageUrl,
+      artist,
+      isPlaying,
+      songUrl,
+      title,
+    };
+  } catch (error) {
+    console.error("Error fetching currently playing track:", error);
+    return null;
   }
 };
-
