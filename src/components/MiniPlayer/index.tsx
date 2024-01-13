@@ -163,7 +163,8 @@ const MiniPlayer = () => {
             </VisuallyHidden>
           </div>
           <div>
-            <div className="song-info">
+            <a href={result.songUrl} target="_blank" className="song-info">
+              <p></p>
               <img
                 crossOrigin="anonymous"
                 className="album-art"
@@ -178,12 +179,12 @@ const MiniPlayer = () => {
                   color: textColor,
                 }}
               >
-                <a href={result.songUrl} target="_blank">
+                <p>
                   <p>{result.title}</p>
                   <p>{result.artist}</p>
-                </a>
+                </p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       )}
