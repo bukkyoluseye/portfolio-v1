@@ -23,8 +23,8 @@ const MiniPlayer = () => {
     };
 
     const getTextColor = (background: string) => {
-      // The range for color difference
-      const colorDifferenceThreshold = 500;
+      // WCAG 2.0 AA standard for normal text
+      const threshold = 4.5;
 
       const rgbStringToArray = (rgbString: string) => {
         // Extract the numeric values from the RGB string
@@ -37,16 +37,44 @@ const MiniPlayer = () => {
 
       // Call rgbStringToArray function with the rgbString passed through the getTextColor function
       const backgroundRGB = rgbStringToArray(background);
+      console.log(backgroundRGB);
 
-      // Color difference is determined by the following formula:
-      const colorDifference =
-        Math.max(backgroundRGB[0], 255) -
-        Math.min(backgroundRGB[0], 255) +
-        (Math.max(backgroundRGB[1], 255) - Math.min(backgroundRGB[1], 255)) +
-        (Math.max(backgroundRGB[2], 255) - Math.min(backgroundRGB[2], 255));
+      // Helper function to calculate contrast ratio
+      const calculateContrastRatio = (color1: number[], color2: number[]) => {
+        const luminance1 = calculateRelativeLuminance(color1);
+        const luminance2 = calculateRelativeLuminance(color2);
+        console.log(luminance1);
+        console.log(luminance2);
 
+        const brighterColor = Math.max(luminance1, luminance2);
+        const darkerColor = Math.min(luminance1, luminance2);
+
+        return (brighterColor + 0.05) / (darkerColor + 0.05);
+      };
       // Determine text color based on the calculated contrast ratio
-      return colorDifference >= colorDifferenceThreshold ? "#fff" : "#000";
+      /* Helper function to calculate relative luminance of a color based on its RGB values. 
+      Relative luminance is a measure of the perceived brightness of a color in the human visual system https://www.w3.org/TR/WCAG20/#relativeluminancedef */
+      const calculateRelativeLuminance = (color: number[]) => {
+        const sRGB = color.map((value) => {
+          // Convert RGB values to sRGB values (normalize by dividing each component by 255)
+          const sRGBValue = value / 255;
+          // Gamma-corrected the normalized sRGB values
+          return sRGBValue <= 0.03928
+            ? sRGBValue / 12.92
+            : Math.pow((sRGBValue + 0.055) / 1.055, 2.4);
+        });
+
+        return 0.2126 * sRGB[0] + 0.7152 * sRGB[1] + 0.0722 * sRGB[2];
+      };
+
+      // Calculate contrast ratio with black text
+      const contrastWithBlack = calculateContrastRatio(
+        backgroundRGB,
+        [18, 18, 18]
+      );
+      console.log(contrastWithBlack);
+      // Determine text color based on the calculated contrast ratio
+      return contrastWithBlack >= threshold ? "#121212" : "#fff";
     };
 
     const extractImageColor = () => {
@@ -60,6 +88,8 @@ const MiniPlayer = () => {
           // Convert dominant color from colorThief into an RGB string
           const rgbColor = `rgb(${result[0]}, ${result[1]}, ${result[2]})`;
           setBackgroundColor(rgbColor);
+          console.log(rgbColor);
+          console.log(backgroundColor);
           let newTextColor;
           if (backgroundColor !== undefined) {
             newTextColor = getTextColor(backgroundColor);
