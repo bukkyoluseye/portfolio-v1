@@ -10,6 +10,8 @@ export interface ProjectDataTypes {
 
 export interface CurrentlyPlayingItem {
   albumImageUrl: string;
+  albumName: string;
+  albumType: "album" | "single" | "compilation";
   artist: string[];
   isPlaying: boolean;
   songUrl: string;

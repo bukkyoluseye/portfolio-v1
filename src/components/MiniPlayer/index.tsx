@@ -156,7 +156,7 @@ const MiniPlayer = () => {
                 crossOrigin="anonymous"
                 className="album-art"
                 src={result.albumImageUrl}
-                alt={`${result.title} album art`}
+                alt={`Cover art for the ${result.albumName} ${result.albumType} by ${result.artist}`}
                 ref={albumArtRef}
               />
               <div

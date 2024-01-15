@@ -41,8 +41,10 @@ export const getCurrentlyPlayingTrack = async (): Promise<any> => {
     });
 
     const song = response.data;
-    
+
     const albumImageUrl = song.item.album.images[0].url;
+    const albumName = song.item.album.name;
+    const albumType = song.item.album.album_type;
     const artist = song.item.artists
       .map((_artist: { name: any }) => _artist.name)
       .join(", ");
@@ -52,6 +54,8 @@ export const getCurrentlyPlayingTrack = async (): Promise<any> => {
 
     return {
       albumImageUrl,
+      albumName,
+      albumType,
       artist,
       isPlaying,
       songUrl,
